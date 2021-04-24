@@ -12,6 +12,9 @@ const customStyles = {
         transform: 'translate(-50%, -50%)'
     }
 };
+// coinpayments------------
+
+
 
 
 
@@ -26,7 +29,10 @@ class Dashboard extends React.Component {
 
         }
     }
-
+    logout = () => {
+        sessionStorage.clear()
+        window.location.href = '/';
+    }
 
     openModal = () => {
 
@@ -67,6 +73,7 @@ class Dashboard extends React.Component {
     // handlebtcval = (event) => {
     //     this.setState({ btcamount: event.target.value })
     // }
+    
 
 
     render() {
@@ -87,14 +94,17 @@ class Dashboard extends React.Component {
 
                         <ul class="nav header-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="#" >Dashboard</a>
+                                {/* <a class="nav-link" href="#" >Dashboard</a> */}
                             </li>
 
 
                         </ul>
+                        
+
                         <div className="collapse navbar-collapse justify-content-end navMenu">
                             <div className="nav-side-icon">
                                 {/* <button className="btn blue-btn"></button> */}
+                                <button className="btn blue-btn" onClick={this.logout}>Logout</button>
                                 <span><i class="fas fa-bell"></i></span>
                                 <span><i class="fas fa-cog"></i></span>
                             </div>
@@ -112,10 +122,6 @@ class Dashboard extends React.Component {
                         <a href="#">
                             <i class="fas fa-chart-area"></i>
                             <span>Transfer History</span>
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-chart-area"></i>
-                            <span>Affiliate Program</span>
                         </a>
                         <a href="#">
                             <i class="fas fa-cog"></i>

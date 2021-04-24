@@ -4,6 +4,7 @@ import axios from 'axios';
 
 
 
+
 class Signin extends React.Component {
     constructor(props) {
         super(props);
@@ -44,9 +45,9 @@ class Signin extends React.Component {
                 if (!respdata.data.status) {
                     swal({ title: "Login failed!", icon: "error" })
                 } else {
-                    console.log("jwtToken",respdata.data)
+                    console.log("jwtToken", respdata.data)
                     sessionStorage.setItem("jwtToken", respdata.data.token);
-                    this.props.history.push('/')
+                    this.props.history.push('/Dashboard')
                 }
             }).catch((err) => {
                 console.log('errr', err)
@@ -58,19 +59,39 @@ class Signin extends React.Component {
     render() {
         return (
             <>
-                <div>
-                    <h2>Signin</h2>
-                    <div>
-                        <input type="text" placeholder="Email" value={this.state.email} onChange={this.handleemail}></input><br />
+                <div className="main-body">
+                    <div className="h-100">
+                        <div className="row">
+                            <div className="col-sm-6">
+                                <div className="left-image-section">
+                                    <h3>left</h3>
+                                </div>
+                            </div>
+                            <div className="col-sm-6">
+                                
+                                <div className="formContent">
+                                    <h2>Signin</h2>
+                                    <div>
+                                        <input type="text" placeholder="Email" value={this.state.email} onChange={this.handleemail}></input><br />
 
-                        <div className="pas-field">
-                            <input type={this.state.hidden ? 'password' : 'text'} placeholder="password" value={this.state.password} onChange={this.handlepassword}></input>
-                            <i class="fa fa-eye" aria-hidden="true" onClick={this.toggleShow}></i>
+                                        <div className="pas-field">
+                                            <input type={this.state.hidden ? 'password' : 'text'} placeholder="password" value={this.state.password} onChange={this.handlepassword}></input>
+                                            <i class="fa fa-eye" aria-hidden="true" onClick={this.toggleShow}></i>
+                                        </div>
+                                        <button className="custom-blue-btn fadeIn fourth" onClick={this.signin}>Sign In</button>
+                                    </div>
+                                    <div id="formFooter">
+                                        <p>Don't have an account? <a className="" href="/Signup">Sign up</a></p>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
-                        <button className="fadeIn fourth" onClick={this.signin}>SignIn</button>
-                    </div>
 
+
+                    </div>
                 </div>
+
             </>
         )
     }

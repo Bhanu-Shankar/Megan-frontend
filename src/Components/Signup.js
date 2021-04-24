@@ -57,10 +57,10 @@ class Signup extends React.Component {
                 "confirmPass": this.state.confirmPass
             }).then((respdata) => {
                 console.log("respdata", respdata.data)
-                if(!respdata.data.status){
-                    swal({title:"Register user failed"})
-                }else{
-                    this.props.history.push('/Signin')
+                if (!respdata.data.status) {
+                    swal({ title: "Register user failed" })
+                } else {
+                    this.props.history.push('/')
                 }
             }).catch((errs) => {
                 console.log("err", errs)
@@ -74,30 +74,42 @@ class Signup extends React.Component {
         return (
             <>
                 <div className="main-body">
-                    <div className="container h-100 ">
-
-                        <div className="formContent">
-                            <h1>Sign Up</h1>
-                            <div>
-                                <input type="text" placeholder="Username" value={this.state.username} onChange={this.handleusername}></input>
-                                <input type="text" placeholder="Email" value={this.state.email} onChange={this.handleemail}></input>
-
-                                <div className="pas-field">
-                                    <input type={this.state.hidden ? 'password' : 'text'} placeholder="password" value={this.state.password} onChange={this.handlepassword}></input>
-                                    <i class="fa fa-eye" aria-hidden="true" onClick={this.toggleShow}></i>
-                                </div>
-                                <div className="pas-field">
-                                    <input type={this.state.hidden ? 'password' : 'text'} placeholder="Confirm password" value={this.state.confirmPass} onChange={this.handleconfirmpass}></input>
-                                    <i class="fa fa-eye" aria-hidden="true" onClick={this.toggleShow}></i>
+                    <div className="h-100 ">
+                        <div className="row">
+                            <div className="col-sm-6">
+                                <div className="left-image-section">
+                                    <h3>left</h3>
                                 </div>
 
-
-                                <input type="submit" className="fadeIn fourth" value="Sign Up" onClick={this.signup}></input>
                             </div>
-                            <div id="formFooter">
-                                <p>Already registered <a className="underlineHover" href="/Signin">Sign In</a></p>
+                            <div className="col-sm-6">
+                                <div className="formContent">
+                                    <h1>Sign Up</h1>
+                                    <div>
+                                        <input type="text" placeholder="Username" value={this.state.username} onChange={this.handleusername}></input>
+                                        <input type="text" placeholder="Email" value={this.state.email} onChange={this.handleemail}></input>
+
+                                        <div className="pas-field">
+                                            <input type={this.state.hidden ? 'password' : 'text'} placeholder="password" value={this.state.password} onChange={this.handlepassword}></input>
+                                            <i class="fa fa-eye" aria-hidden="true" onClick={this.toggleShow}></i>
+                                        </div>
+                                        <div className="pas-field">
+                                            <input type={this.state.hidden ? 'password' : 'text'} placeholder="Confirm password" value={this.state.confirmPass} onChange={this.handleconfirmpass}></input>
+                                            <i class="fa fa-eye" aria-hidden="true" onClick={this.toggleShow}></i>
+                                        </div>
+
+                                        <button className="custom-blue-btn fadeIn fourth" onClick={this.signup}>Sign Up</button>
+                                        {/* <input type="submit" className="fadeIn fourth" value="Sign Up" onClick={this.signup}></input> */}
+                                    </div>
+                                    <div id="formFooter">
+                                        <p>Already registered <a className="" href="/">Sign In</a></p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
+
+
 
                     </div>
                 </div>

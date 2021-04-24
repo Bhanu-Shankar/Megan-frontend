@@ -41,10 +41,12 @@
 
 .topheader .navbar{
   background: #000;
-    color: #fff;
+    color: #56baed;
+    background: #fff;
+    box-shadow: 0 0 11px rgba(0, 0, 0, 0.13);
 }
 .navbar-brand{
-  color: #fff;
+  color: #000;
 }
 .header-menu a.nav-link {
   color: #fff;
@@ -56,15 +58,16 @@
 
 .sidebar {
   height: 100%;
-  width: 220px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #000;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 70px;
+    width: 220px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 70px;
+    background-color: #fff;
+    box-shadow: 0 0 11px rgba(0, 0, 0, 0.13);
 }
 
 .sidebar a:hover {
@@ -81,13 +84,21 @@
 }
 .sidebar a {
   text-decoration: none;
-  color: #fff;
-  display: block;
-  transition: 0.3s;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  text-align: left;
-  padding-left: 24px;
+    color: #56baed;
+    display: block;
+    transition: 0.3s;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    text-align: left;
+    padding-left: 24px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.13);
+}
+.sidebar a:hover {
+  background: #56baed;
+  color: #fff !important;
+  margin: 5px 5px;
+  border-radius: 2px;
+  box-shadow: 0 15px 8px -11px rgba(0, 0, 0, 0.25);
 }
 /* Main app body----------- */
 
@@ -96,16 +107,17 @@
   min-height: calc(100% - 60px);
   height: 100%;
   margin-top: 68px;
+  background: #f3f3f3;
 }
 .wrap {
-  padding-top: 1.5rem;
+  padding-top: 3.5rem;
   padding-left: 3.5rem;
   padding-right: 3.5rem;
 }
 .coins-count {
   padding: 16px;
   background-color: #fff;
-  margin-bottom: 3.5rem;
+  margin-bottom: 4rem;
   -webkit-box-shadow: 0 1px 2px #ccc;
   box-shadow: 3px 2px 6px #ccc;
   border-radius: 2px;
@@ -121,7 +133,7 @@ span.bitscoin-tb {
 }
 .chart {
   background-color: #fff;
-  margin-bottom: 3.5rem;
+  margin-bottom: 7.5rem;
   -webkit-box-shadow: 0 1px 2px #ccc;
   box-shadow: 3px 2px 6px #ccc;
   border-radius: 2px;
@@ -137,7 +149,7 @@ span.bitscoin-tb {
 }
 .custom-button {
   color: #fff;
-  background-color: #52f8b3;
+  background-color: #56baed;
   padding: 6px 12px;
   font-size: 12px;
   line-height: 1.5;
@@ -145,4 +157,237 @@ span.bitscoin-tb {
   margin-bottom: 20px;
   font-weight: 500;
   border: none;
+}
+
+/* ----------------------------------Signup and signin-------------------------------------------- */
+.left-image-section{
+  background-image: url("images/gcoin");
+  background-color: #cccccc;
+  height: 100%; 
+  background-position: center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  min-height: 100vh;
+}
+
+
+.formContent {
+  border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 650px;
+    position: relative;
+    padding: 0px;
+    /* -webkit-box-shadow: 0 30px 60px 0 rgb(0 0 0 / 30%); */
+    /* box-shadow: 0 30px 60px 0 rgb(0 0 0 / 30%); */
+    text-align: center;
+    margin: auto;
+    padding-top: 50px;
+    margin-top: 15%;
+}
+
+#formFooter {
+  /* background-color: #f6f6f6; */
+  border-top: 1px solid #dce8f1;
+  padding: 25px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+
+
+/* TABS */
+
+h2.inactive {
+  color: #cccccc;
+}
+
+h2.active {
+  color: #0d0d0d;
+  border-bottom: 2px solid #5fbae9;
+}
+
+
+
+/* FORM TYPOGRAPHY*/
+
+.custom-blue-btn  {
+  background-color: #56baed;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 20px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-blue-btn:hover  {
+  background-color: #39ace7;
+}
+
+.custom-blue-btn:active  {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+input[type=text],textarea,input[type=password]  {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  /* text-align: center; */
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #5fbae9;
+}
+
+input[type=text]:placeholder, input[type=password]:placeholder {
+  color: #cccccc;
+}
+
+
+/* Simple CSS3 Fade-in Animation */
+/* .underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #56baed;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #0d0d0d;
+}
+
+.underlineHover:hover:after{
+  width: 100%;
+} */
+
+
+
+/* OTHERS */
+
+*:focus {
+    outline: none;
+} 
+
+#icon {
+  width:60%;
+}
+
+
+/* input file */
+label.custom-file-select{
+  display: inline-block;
+    border: 3px dashed rgb(204, 204, 204);
+    color: rgb(204, 204, 204);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+   }
+
+input[type="file"] {
+  display: none;
+}
+
+.pas-field {
+  position: relative;
+}
+i.fa.fa-eye {
+  position: absolute;
+    right: 10%;
+    top: 37%;
+    color: #56baed;
+
+}
+.carousel-controls i.fa{
+  font-size: 30px;
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 10px;
+  color: rgba(4, 4, 5, 0.5);
+  background-color: #fff;
+}
+.carousel-inner {
+  overflow: visible;
+}
+.carousel-controls i.fa.fa-angle-left {
+  position: relative;
+  right: 80px;
+}
+.carousel-controls i.fa.fa-angle-right {
+  position: relative;
+  left: 96px;
+}
+
+
+
+/* How to page */
+.collaps-title {
+  display: flex;
+  padding: 10px 0;
+}
+.collaps-container {
+  text-align: left;
+  margin: 10px 0;
+}
+.collaps-title span {
+  margin-right: 10px;
+  padding: 2px;
+  cursor: pointer;
+  line-height: 14px;
+}
+
+.collaps-title h4 {
+  font-size: 16px;
+}
+.collaps-title .fas {
+  font-size: 14px;
+}
+.question-area {
+  padding: 0 96px;
+  text-align: left;
+  margin-top: 125px;
+}
+.question-area h3 {
+  color: rgb(0, 102, 255);
+  margin: 20px 0;
+}
+.collapse p{
+  color: rgb(55, 53, 47);
 }

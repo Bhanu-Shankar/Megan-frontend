@@ -3404,6 +3404,11 @@
   "resolved" "https://registry.npmjs.org/code-point-at/-/code-point-at-1.1.0.tgz"
   "version" "1.1.0"
 
+"coinpayments@^2.1.2":
+  "integrity" "sha512-qN5onERAIWl6XKq3bCX19Jm1d8Ucg0LDQV690SvduPd6NCzyagEjS6MpFg5fV2gvQXaMq14ZijAnCat9STcoFg=="
+  "resolved" "https://registry.npmjs.org/coinpayments/-/coinpayments-2.1.2.tgz"
+  "version" "2.1.2"
+
 "collect-v8-coverage@^1.0.0":
   "integrity" "sha512-iBPtljfCNcTKNAto0KEtDfZ3qzjJvqE3aTGZsbhjSBlorqpXJlaWWtPO35D+ZImoC3KWejX64o+yPGxhWSTzfg=="
   "resolved" "https://registry.npmjs.org/collect-v8-coverage/-/collect-v8-coverage-1.0.1.tgz"
