@@ -61,13 +61,13 @@ class Signin extends React.Component {
             <>
                 <div className="main-body">
                     <div className="h-100">
-                        <div className="row">
-                            <div className="col-sm-6">
+                        <div className="flex-div">
+                            <div className="col-sm-8 no-padding">
                                 <div className="left-image-section">
-                                    <h3>left</h3>
+                                    {/* <h3>left</h3> */}
                                 </div>
                             </div>
-                            <div className="col-sm-6">
+                            <div className="col-sm-4">
                                 
                                 <div className="formContent">
                                     <h2>Signin</h2>

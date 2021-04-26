@@ -1,6 +1,8 @@
 import React from 'react';
 // import Logo from '../images/nlogo.jpg';
 import Modal from 'react-modal';
+import Web3 from 'web3';
+var web3 = new Web3();
 
 const customStyles = {
     content: {
@@ -25,10 +27,51 @@ class Dashboard extends React.Component {
             modalOpen: false,
             coinamount: 0,
             greencoinamount: 0,
-            coin: ""
+            coin: "",
+            account:""
 
         }
     }
+
+    async componentDidMount(){
+
+        await this.loadWeb3();
+        await this.loadBlockchainData();
+        
+    }
+    
+    loadWeb3 = async () => {
+        try {
+            if (window.ethereum) {
+                window.web3 = new Web3(window.ethereum)
+                await window.ethereum.enable()
+            }
+            else if (window.web3) {
+                window.web3 = new Web3(window.web3.currentProvider)
+            }
+            else {
+                window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
+            }
+        } catch (err) {
+            console.log({ title: "please install metamask", icon: "error" })
+        }
+    };
+
+    loadBlockchainData = async () => {
+        try {
+            const web3 = window.web3
+            // Load account
+            const accounts = await web3.eth.getAccounts()
+            this.setState({ web3: web3, account: accounts[0] })
+ 
+
+        } catch (err) {
+            // console.log("error", err)
+        }
+
+    }
+
+   
     logout = () => {
         sessionStorage.clear()
         window.location.href = '/';
@@ -70,9 +113,26 @@ class Dashboard extends React.Component {
     handleCoinBal = (event) => {
         this.setState({ coinamount: event.target.value })
     }
-    // handlebtcval = (event) => {
-    //     this.setState({ btcamount: event.target.value })
-    // }
+    metapayment = () =>{
+        // const provider = detectEthereumProvider();
+        
+        if (typeof window.ethereum !== 'undefined') {
+            console.log('MetaMask is installed!');
+
+            let web3js = new Web3(window.web3.currentProvider); 
+            web3js.eth.sendTransaction({
+                from: this.state.account,
+                to: '0x5B75c8B4d4c98109fAe87A3aaF7Ac973779Bd11e',
+                value: web3js.utils.toWei(this.state.coinamount, 'ether'), 
+            })  
+            
+
+          } else {
+            console.log('MetaMask not found,Please install MetaMask')
+          }
+        
+
+    }
     
 
 
@@ -220,6 +280,7 @@ class Dashboard extends React.Component {
                                                         <div className="row">
                                                             <div className="col-md-12 col-sm-12">
                                                                 <button className="custom-button" onClick={this.openModal}>Purchase</button>
+                                                                <button className="custom-button" onClick={this.metapayment}>Purchase with MetaMask</button>
                                                             </div>
                                                         </div>
 
